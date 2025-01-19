@@ -78,7 +78,7 @@ const handleBlur = () => {
 };
 
     return (
-        <header className={`fixed px-2 left-1/2 -translate-x-1/2 top-0 z-40 h-14 sm:h-16 container flex transtion-all duration-300 justify-between border-b-black/[0.1] dark:border-b-white/[0.1] items-center xl:border-b  bg-white dark:bg-black gap-4 ${isBarOpen ? "" : " border-b"}`} >
+        <header className={`fixed px-2 left-1/2 -translate-x-1/2 top-0 z-40 h-14 sm:h-16 xl:h-[72px] container flex transtion-all duration-300 justify-between border-b-black/[0.1] dark:border-b-white/[0.1] items-center xl:border-b  bg-white dark:bg-black gap-4 ${isBarOpen ? "" : " border-b"}`} >
             <div className="text-2xl lg:text-3xl flex gap-2 items-center font-bold">
                 <button onClick={() => setIsBarOpen(!isBarOpen)} className="rounded-md hover:bg-black/[0.2]  p-[6px] sm:p-2 dark:hover:bg-white/[0.2] transition-all ">
                     <HiOutlineMenu />
@@ -96,7 +96,7 @@ const handleBlur = () => {
                 <button className={`hover:bg-black/[0.2] dark:hover:bg-white/[0.2] overflow-hidden transition-all rounded-md  ${isSearchOpen ? "w-0 opacity-0 sm:w-auto sm:opacity-100 sm:p-2" : " p-[6px] "}`}>
                     <IoCartOutline className="text-2xl lg:text-3xl" />
                 </button>
-                <button  className={`hover:bg-black/[0.2] dark:hover:bg-white/[0.2] overflow-hidden transition-all rounded-md  ${isSearchOpen ? "w-0 opacity-0 sm:w-auto sm:opacity-100 sm:p-[10px]" : "p-[8px]"}`}>
+                <button onClick={() => {document.querySelector("html")?.classList.toggle("dark")}} className={`hover:bg-black/[0.2] dark:hover:bg-white/[0.2] overflow-hidden transition-all rounded-md  ${isSearchOpen ? "w-0 opacity-0 sm:w-auto sm:opacity-100 sm:p-[10px]" : "p-[8px]"}`}>
                     <FaRegUser className="text-xl lg:text-2xl" />
                 </button>
 
