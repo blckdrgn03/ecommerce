@@ -49,3 +49,20 @@ body {
 }
 
 
+#scroll-container {
+  scroll-snap-type: x mandatory;
+  
+}
+
+#scroll-container {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+#scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+#category-item {
+  scroll-snap-align: center;
+}
