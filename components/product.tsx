@@ -15,7 +15,7 @@ type ProductType = {
 
 export default function Product({ name, img, price, discount, rating, ratingCount, id } : ProductType) {
     return (
-        <Link href={"/products/" + id} className="overflow-hidden pb-2 rounded-md border border-black/[0.1] dark:border-white/[0.1] flex flex-col  ">
+        <Link href={"/products/" + id} className="overflow-hidden pb-2 rounded-md bg-neutral-50 dark:bg-neutral-950 flex flex-col  ">
             <div className="w-full aspect-square relative">
                 <Image fill src={img} alt={name} className="absolute bg-blue-500" />
             </div>

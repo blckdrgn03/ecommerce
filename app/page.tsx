@@ -12,9 +12,9 @@ export default function Page() {
     return (
         <div className="container h-full mx-auto relative ">
             <Header isBarOpen={isBarOpen} setIsBarOpen={setIsBarOpen} />
-            <div className={` transtion-all duration-300 xl:flex h-screen ${isBarOpen ? "gap-2" : "gap-0"}`}>
+            <div className={`flex justify-end transtion-all duration-300  ${isBarOpen ? "" : ""}`}>
                 <Sidebar isBarOpen={isBarOpen} setIsBarOpen={setIsBarOpen} />
-                <main className={`pt-16 sm:pt-[4.5rem] xl:pt-[92px] h-full px-4 overflow-y-scroll transition-all duration-300 overflow-x-hidden ${isBarOpen ? "xl:w-[calc(75%-4px)]" : "xl:w-full"}`}>
+                <main className={`pt-[64px] sm:pt-[72px] lg:pt-[80px] xl:pt-[92px] px-2 lg:px-4  transition-all duration-300 overflow-x-hidden ${isBarOpen ? "xl:w-[calc(75%-8px)]" : "xl:w-full"}`}>
                     <Slider />
                     <Categories isBarOpen={isBarOpen} />
                     <JustForYou />
