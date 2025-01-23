@@ -5,6 +5,7 @@ import Header from "@/components/header";
 import Sidebar from "@/components/sidebar";
 import Slider from "@/components/slider";
 import Categories from "@/components/categories";
+import JustForYou from "@/components/justforyou";
 
 export default function Page() {
     const [isBarOpen, setIsBarOpen] = useState(false);
@@ -16,6 +17,7 @@ export default function Page() {
                 <main className={`pt-16 sm:pt-[4.5rem] xl:pt-[92px] h-full px-4 overflow-y-scroll transition-all duration-300 overflow-x-hidden ${isBarOpen ? "xl:w-[calc(75%-4px)]" : "xl:w-full"}`}>
                     <Slider />
                     <Categories isBarOpen={isBarOpen} />
+                    <JustForYou />
                 </main>
             </div>
                     
