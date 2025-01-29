@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ImStarFull } from "react-icons/im";
+import { ImStarEmpty } from "react-icons/im";
 import Link from "next/link";
 
 type ProductType = {
@@ -28,22 +29,22 @@ export default function Product({ name, img, price, discount, rating, ratingCoun
                 <div className="flex justify-center items-center px-3 md:pt-1 lg:py-1 lg:px-4 gap-2  ">
                     <h3 className=" text-lg lg:text-xl  ">${Math.round(price - price * discount / 100)} </h3>
                     <p className="">
-                        <span className="text-xs text-gray-700 dark:text-gray-300">-%{discount}</span>
+                        <span className="text-xs text-slate-500 dark:text-slate-500">-%{discount}</span>
                     </p>
                 </div>
                 
-                <div className="flex gap-2 flex-row-reverse px-3 justify-center text-xs lg:text-base text-gray-700 dark:text-gray-300  items-center">
+                <div className="flex gap-2 flex-row-reverse px-3 justify-center text-xs lg:text-base text-slate-500 dark:text-slate-500  items-center">
                     <div className="text-xs">
                         {ratingCount}
                     </div>
-                    <div className="relative bg-transparent  flex items-center gap-1 text-gray-500">
-                        <ImStarFull />
-                        <ImStarFull />
-                        <ImStarFull />
-                        <ImStarFull />
-                        <ImStarFull />    
+                    <div className="relative bg-transparent  flex items-center gap-1 text-yellow-300">
+                        <ImStarEmpty />
+                        <ImStarEmpty />
+                        <ImStarEmpty />
+                        <ImStarEmpty />
+                        <ImStarEmpty />    
 
-                        <div className="absolute top-0 left-0 w-full h-full overflow-hidden flex gap-1 text-yellow-300">
+                        <div className="absolute top-0 left-0 w-full h-full overflow-hidden flex gap-1 ">
                             {rating >= 4 && <ImStarFull />}
                             {rating >= 3 && <ImStarFull />}
                             {rating >= 2 && <ImStarFull />}

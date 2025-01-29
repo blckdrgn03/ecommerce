@@ -89,7 +89,7 @@ export default function Categories({ isBarOpen }: { isBarOpen: boolean }) {
                 <h1 className="text-xl md:text-2xl lg:text-3xl font-bold">Categories</h1>
                 <Link
                     href="/categories"
-                    className="text-gray-700 dark:text-gray-300 flex gap-1 items-center hover:text-black dark:hover:text-white transition-all hover:font-semibold"
+                    className="text-slate-500 dark:text-slate-500 flex gap-1 items-center hover:text-black dark:hover:text-white transition-all hover:font-semibold"
                 >
                     <div>See all</div>
                     <IoIosArrowForward />
@@ -122,7 +122,7 @@ export default function Categories({ isBarOpen }: { isBarOpen: boolean }) {
                                 alt={category.name}
                                 src={category.img}
                             />
-                            <div className="text-center text-sm hidden sm:block md:text-md text-gray-300">
+                            <div className="text-center text-sm hidden sm:block md:text-md text-slate-500">
                                 {category.products} products
                             </div>
                             <div className="text-center text-md sm:text-lg capitalize font-semibold">
