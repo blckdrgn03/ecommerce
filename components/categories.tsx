@@ -116,14 +116,15 @@ export default function Categories({ isBarOpen }: { isBarOpen: boolean }) {
                             }`}
                             key={category.id}
                         >
+                            
                             <Image
                                 className="object-center object-cover -z-20"
                                 fill
                                 alt={category.name}
                                 src={category.img}
                             />
-                            <div className="text-center text-sm hidden sm:block md:text-md text-slate-500">
-                                {category.products} products
+                            <div className="text-center sm:text-sm text  text-xs md:text-base text-black/[0.5] dark:text-white/[0.5] transition-all">
+                                {category.products}
                             </div>
                             <div className="text-center text-md sm:text-lg capitalize font-semibold">
                                 {category.name}

@@ -48,19 +48,20 @@ export default function Slider() {
     }, [nextSlide]); 
 
     return (
-        <div className="w-full aspect-[7/5] md:aspect-video xl:aspect-[2/1] shadow-[inset_0_-12rem_7rem_-3rem_black] rounded-md bg-blue-500 relative flex overflow-hidden">
+        <div className="w-full aspect-[7/5] md:aspect-video xl:aspect-[2/1] rounded-md bg-blue-500 relative flex overflow-hidden">
             {specials.map((special: Special) => {
                 return (
-                    <div style={{ transform: `translateX(calc(-100% * ${sliderIndex}))` }} key={special.id} className={`shrink-0 w-full aspect-[7/6] sm:aspect-[7/5] md:aspect-video transtion-all duration-500 flex items-end justify-between gap-1 px-4 py-5 sm:py-7 md:px-6 md:py-9 lg:px-8`}>
+                    <div style={{ transform: `translateX(calc(-100% * ${sliderIndex}))` }} key={special.id} className={`shrink-0 w-full aspect-[7/6] sm:aspect-[7/5] md:aspect-video transtion-all duration-500 flex items-end justify-between gap-1 px-4 py-5 sm:py-7 md:px-6 md:py-9 relative lg:px-8`}>
                         <Image src={special.img} style={{ zIndex: -10 }} className="object-center object-cover" fill alt={special.name} />
-                        <div className="">
-                            <h2><span className="text-black dark:text-white text-lg  sm:text-xl md:text-2xl lg:text-3xl font-semibold">${Math.round(special.price - special.price * special.discount / 100)}</span>&nbsp; <span className="line-through text-xs sm:text-sm md:text-md lg:text-lg text-slate-500">${special.price}</span><span className="text-xs font-semibold sm:text-sm md:text-md lg:text-lg"> - %{special.discount}</span></h2>
-                            <p className=" text-slate-500 w-[30ch] sm:w-auto truncate sm:whitespace-normal sm:overflow-visible sm:text-clip lg:text-lg text-xs sm:text-sm md:text-md">{special.description}</p>
+                        <div className=" ">
+                            <h2><span className="text-black dark:text-white text-lg  sm:text-xl md:text-2xl lg:text-3xl font-semibold">${Math.round(special.price - special.price * special.discount / 100)}</span>&nbsp; <span className="line-through text-xs sm:text-sm md:text-md lg:text-lg text-black/[0.5] dark:text-white/[0.5] transition-all">${special.price}</span><span className="text-xs font-semibold sm:text-sm md:text-md lg:text-lg"> - %{special.discount}</span></h2>
+                            <p className=" text-black/[0.5] dark:text-white/[0.5] transition-all w-[30ch] sm:w-auto truncate sm:whitespace-normal sm:overflow-visible sm:text-clip lg:text-lg text-xs sm:text-sm md:text-md">{special.description}</p>
                             <h2 className="text-black dark:text-white sm:text-xl text-lg md:text-2xl lg:text-3xl font-semibold">{special.name}</h2>
                         </div>
-                        <div className="">
+                        <div className=" ">
                             <button className="font-bold border-black shrink-0 border hover:bg-white hover:border-white dark:text-white dark:border-white hover:dark:bg-black transition-all hover:dark:border-black  text-black p-2 px-4 rounded-md lg:text-lg text-xs sm:text-sm md:text-md">View <span className="hidden sm:inline">Product</span></button>
                         </div>
+                        
                     </div>
                 );
             })}
@@ -69,14 +70,15 @@ export default function Slider() {
 
             <div className="absolute p-1  rounded-full bottom-1 left-1/2 flex items-end gap-1 -translate-x-1/2">
                 {specials.map((special: Special, i: number) => (
-                    <button onClick={() => setSliderIndex(i)} className={`h-2 w-2 transition-all duration-500 dark:bg-white/[0.25] bg-black/[0.25] rounded-full  hover:bg-slate-500 ${sliderIndex == i ? " w-8" : ""}`} key={special.id}></button>
+                    <button onClick={() => setSliderIndex(i)} className={`h-2 w-2 transition-all duration-500 dark:bg-white/[0.25] bg-black/[0.25] rounded-full  hover:bg-slate-700 hover:dark:bg-slate-300 ${sliderIndex == i ? " w-8" : ""}`} key={special.id}></button>
                 ))}
                 <div
                 style={{ transform: `translateX(calc(12px * ${sliderIndex})) translateY(-50%)` }}
-                className="absolute  bg-slate-500 transition-all duration-500 rounded-full left-1 top-1/2  h-2 w-8 "
+                className="absolute  bg-slate-700 dark:bg-slate-300 transition-all duration-500 rounded-full left-1 top-1/2  h-2 w-8 "
                 ></div>
 
             </div>
+            
         </div>
     );
 }

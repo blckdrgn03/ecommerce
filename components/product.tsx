@@ -34,7 +34,7 @@ export default function Product({ name, img, price, discount, rating, ratingCoun
                 </div>
                 
                 <div className="flex gap-2 flex-row-reverse px-3 justify-center text-xs lg:text-base text-slate-500 dark:text-slate-500  items-center">
-                    <div className="text-xs">
+                    <div className="text-xs pt-[3px]">
                         {ratingCount}
                     </div>
                     <div className="relative bg-transparent  flex items-center gap-1 text-yellow-300">

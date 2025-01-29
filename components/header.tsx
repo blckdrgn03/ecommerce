@@ -82,23 +82,23 @@ const handleBlur = () => {
             <div className="container flex h-full px-2 lg:px-4 justify-between mx-auto items-center gap-4">
 
                 <div className="text-xl md:text-2xl lg:text-3xl flex gap-2 items-center font-bold">
-                    <button onClick={() => setIsBarOpen(!isBarOpen)} className="rounded-md hover:bg-black/[0.2] text-xl lg:text-3xl p-[6px] sm:p-2 dark:hover:bg-white/[0.2] transition-all ">
+                    <button onClick={() => setIsBarOpen(!isBarOpen)} className="rounded-md  text-xl lg:text-3xl p-[6px] sm:p-2 hover:bg-slate-500/[0.25] transition-all ">
                         <HiOutlineMenu />
                     </button>
                     E-Shop
                 </div>
                 <div className="flex justify-end grow items-center gap-1 lg:gap-2">
 
-                    <div className={`flex transition-all duration-300 rounded-md justify-end items-center ${isSearchOpen ? "grow bg-black/[0.2] dark:bg-white/[0.2] xl:mx-10" : ""}`}>
+                    <div className={`flex transition-all duration-300 rounded-md justify-end items-center ${isSearchOpen ? "grow bg-slate-500/[0.25] xl:mx-10" : ""}`}>
                         <input spellCheck={false} onBlur={handleBlur} ref={inputRef} type="text" placeholder="Search a product" className={`bg-transparent placeholder:text-slate-500 dark:placeholder:text-slate-500 transition-all h-full text outline-none duration-300 delay-150 ${isSearchOpen ? "shrink grow w-1 px-4 lg:px-6" : "w-0 opacity-0"}`} />
-                        <button ref={searchRef} onBlur={handleBlur} onClick={handleSearch} className="hover:bg-black/[0.2] dark:hover:bg-white/[0.2] transition-all rounded-md p-[6px] sm:p-2">
+                        <button ref={searchRef} onBlur={handleBlur} onClick={handleSearch} className="hover:bg-slate-500/[0.25] transition-all rounded-md p-[6px] sm:p-2">
                             <IoSearch className="text-xl  lg:text-3xl" />
                         </button>
                     </div>
-                    <button className={`hover:bg-black/[0.2] dark:hover:bg-white/[0.2] overflow-hidden transition-all rounded-md  ${isSearchOpen ? "w-0 opacity-0 sm:w-auto sm:opacity-100 sm:p-2" : " p-[6px] sm:p-2"}`}>
+                    <button className={`hover:bg-slate-500/[0.25] overflow-hidden transition-all rounded-md  ${isSearchOpen ? "w-0 opacity-0 sm:w-auto sm:opacity-100 sm:p-2" : " p-[6px] sm:p-2"}`}>
                         <IoCartOutline className="text-xl lg:text-3xl" />
                     </button>
-                    <button className={`hover:bg-black/[0.2] dark:hover:bg-white/[0.2] overflow-hidden transition-all rounded-md  ${isSearchOpen ? "w-0 opacity-0 sm:w-auto sm:opacity-100 sm:p-[10px]" : "p-[8px] sm:p-[10px]"}`}>
+                    <button className={`hover:bg-slate-500/[0.25] overflow-hidden transition-all rounded-md  ${isSearchOpen ? "w-0 opacity-0 sm:w-auto sm:opacity-100 sm:p-[10px]" : "p-[8px] sm:p-[10px]"}`}>
                         <FaRegUser className="text-lg lg:text-2xl" />
                     </button>
 
