@@ -24,17 +24,12 @@ export default function Sidebar({ isBarOpen, setIsBarOpen, left }: { isBarOpen: 
         }
     }, [isBarOpen])
 
-    function handleThemeChange() {
-        
-        document.querySelector("html")?.classList.toggle("dark");
-    }
-
     return (
-        <div style={{left: left[0], width: left[1]}} onClick={() => isBarOpen && window.innerWidth <= 1280 && setIsBarOpen(false)} className={`fixed  top-14 sm:top-16 xl:top-[88px] bottom-0 xl:bottom-4   overflow-hidden max-xl:!w-full  transition-all duration-300 ${isBarOpen ? "  bg-black/[0.35] xl:z-[999] xl:backdrop-blur-none xl:bg-transparent   " : " xl:!w-0"} ${isZUp ? "z-[99] " : "-z-[999]"}`}>
+        <div style={{left: left[0], width: left[1]}} onClick={() => isBarOpen && window.innerWidth <= 1280 && setIsBarOpen(false)} className={`fixed  top-14 sm:top-16 xl:top-[88px] bottom-0 xl:bottom-4   overflow-hidden max-xl:!w-full  transition-all duration-300 ${isBarOpen ? "  bg-black/[0.35] xl:z-[999] xl:backdrop-blur-none xl:bg-transparent   " : " xl:!w-0"} ${isZUp ? "z-[999] " : "-z-[999]"}`}>
             <div className={`max-xl:container max-xl:mx-auto xl:w-full h-full py-2 px-2 lg:py-4 lg:px-4 xl:px-0 xl:py-0`}>
                 <div onClick={(e) => e.stopPropagation()} className={`bg-neutral-50 dark:bg-neutral-950  rounded-md transition-all duration-300 overflow-hidden flex flex-col  justify-between   xl:z-[999] h-full ${isBarOpen ? "w-2/3 p-6 pb-2 lg:pb-4 md:w-1/2 lg:w-1/3  xl:w-full " : "w-0 "}`}>
                     <div className="flex flex-col w-full">
-                        <Link href="/" className={`text-lg lg:text-2xl md:text-xl border-b-slate-500/[0.25] border-b flex w-full gap-3 md:gap-4 items-center p-4 pr-2 pt-1 sm:pb-5 transition-all  ${isBarOpen ? "" : "opacity-0"}`}>
+                        <Link href="/" className={`text-lg lg:text-2xl md:text-xl border-b-slate-500/[0.25] border-b flex w-full gap-3 md:gap-4 items-center p-4 pr-2 pt-2 sm:pb-5 transition-all  ${isBarOpen ? "" : "opacity-0"}`}>
                             <TiHome className="" /> 
                             <div>Home</div>
                         </Link>
@@ -58,14 +53,17 @@ export default function Sidebar({ isBarOpen, setIsBarOpen, left }: { isBarOpen: 
                     </div>
                     
                     <div className="flex flex-col w-full items-center gap-4">
-                        <button onClick={handleThemeChange} className=" bg-slate-600 relative rounded-full flex transition-all">
-                            <MdSunny className="p-1 rounded-full text-white text-2xl" />
-                            <WiMoonFull className="p-1 text-2xl text-white" />
-                            <div className="absolute aspect-square transition-all h-full  bg-slate-400 flex items-center justify-center rounded-full left-0 dark:left-1/2">
-                                <MdSunny className="p-1 rounded-full transition-all dark:text-xl text-2xl text-white" />
-                                <div className="absolute red-500 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  transition-all  h-0 w-0 rounded-full dark:h-3 dark:w-3  bg-white"></div>
+                        <div className="border border-slate-500/[0.25] gap-1 relative rounded-full flex transition-all">
+                            <button onClick={() => document.querySelector("html")?.classList.remove("dark")} className="p-1 z-[1000] rounded-full text-slate-500 text-xl">
+                                <MdSunny />
+                            </button>
+                            <button onClick={() => document.querySelector("html")?.classList.add("dark")} className="p-1 z-[1000] text-xl text-slate-500">
+                                <WiMoonFull />
+                            </button>
+                            
+                            <div className="absolute aspect-square transition-all  h-full  bg-slate-500/[0.25] flex items-center justify-center rounded-full left-0 dark:left-[calc(50%+2px)]">
                             </div>
-                        </button>
+                        </div>
                         <div className="text-slate-500 text-xs text-center">
                             <a className="hover:text-black dark:hover:text-white transition-all" href="">More info</a>  | <a className="hover:text-black dark:hover:text-white transition-all" href="">Github</a> | <a className="hover:text-black dark:hover:text-white transition-all" href="">Contact</a>  | <a className="hover:text-black dark:hover:text-white transition-all" href="">Help</a> | <a className="hover:text-black dark:hover:text-white transition-all" href="">Contact</a> <br />
                             <span  className="">Copyright 2025 ©</span> 

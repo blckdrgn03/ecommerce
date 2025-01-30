@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@radix-ui/react-popover": "^1.1.5",
     "@tailwindcss/line-clamp": "^0.4.4",
     "clsx": "^2.1.1",
     "framer-motion": "^12.0.0",
