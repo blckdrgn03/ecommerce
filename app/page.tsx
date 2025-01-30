@@ -17,7 +17,7 @@ export default function Page() {
             if (window.innerWidth <= 1280) {
                 setSidebarLeft([0, 0])
             } else {
-                setSidebarLeft([(window.innerWidth - (containerRef.current?.offsetWidth || 0)) / 2 - 4, (containerRef.current?.offsetWidth || 0) / 4 + 16])
+                setSidebarLeft([(window.innerWidth - (containerRef.current?.offsetWidth || 0)) / 2 + 11, (containerRef.current?.offsetWidth || 0) / 4 - 9])
             }
                 
         }, [])
@@ -33,7 +33,7 @@ export default function Page() {
                     if (window.innerWidth <= 1280) {
                         setSidebarLeft([0, 0])
                     } else {
-                        setSidebarLeft([(window.innerWidth - (containerRef.current?.offsetWidth || 0)) / 2 - 4, (containerRef.current?.offsetWidth || 0) / 4 + 16])
+                        setSidebarLeft([(window.innerWidth - (containerRef.current?.offsetWidth || 0)) / 2 + 11, (containerRef.current?.offsetWidth || 0) / 4 - 9])
                     }
                 }
                 
@@ -48,11 +48,11 @@ export default function Page() {
         }, []);
 
     return (
-        <div ref={containerRef} className="container h-full mx-auto relative ">
+        <div ref={containerRef} className="container  h-full mx-auto relative ">
             <Header isBarOpen={isBarOpen} setIsBarOpen={setIsBarOpen} />
             <div className={`flex justify-end transtion-all duration-300   ${isBarOpen ? "" : ""}`}>
                 <Sidebar left={sidebarLeft} isBarOpen={isBarOpen} setIsBarOpen={setIsBarOpen} />
-                <main className={`pt-[64px] sm:pt-[72px] lg:pt-[80px] xl:pt-[92px] px-2 lg:px-4  transition-all duration-300 overflow-x-hidden ${isBarOpen ? "xl:w-[calc(75%-8px)]" : "xl:w-full"}`}>
+                <main className={`pt-[64px] sm:pt-[72px] lg:pt-[80px] xl:pt-[88px] px-2 lg:px-4  transition-all duration-300 overflow-x-hidden ${isBarOpen ? "xl:w-[calc(75%-8px)]" : "xl:w-full"}`}>
                     <Slider />
                     <Categories isBarOpen={isBarOpen} />
                     <JustForYou />

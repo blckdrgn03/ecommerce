@@ -11,7 +11,6 @@ import { WiMoonFull } from "react-icons/wi";
 
 export default function Sidebar({ isBarOpen, setIsBarOpen, left }: { isBarOpen: boolean, setIsBarOpen: React.Dispatch<React.SetStateAction<boolean>>, left: number[] }) {
     const [isZUp, setIsZUp] = useState(false);
-   
 
     useEffect(() => {
         if (isBarOpen) {
@@ -23,8 +22,6 @@ export default function Sidebar({ isBarOpen, setIsBarOpen, left }: { isBarOpen: 
                 setIsZUp(false);
             }, 300)
         }
-        
-        
     }, [isBarOpen])
 
     function handleThemeChange() {
@@ -33,9 +30,9 @@ export default function Sidebar({ isBarOpen, setIsBarOpen, left }: { isBarOpen: 
     }
 
     return (
-        <div style={{left: left[0], width: left[1]}} onClick={() => isBarOpen && window.innerWidth <= 1280 && setIsBarOpen(false)} className={`fixed  top-14 sm:top-16 xl:top-[76px] bottom-0   overflow-hidden max-xl:!w-full  transition-all duration-300 ${isBarOpen ? " backdrop-blur-lg xl:z-40 xl:backdrop-blur-none bg-black/[0] xl:bg-transparent  dark:xl:bg-transparent dark:bg-white/[0] " : " xl:!w-0"} ${isZUp ? "z-40 " : "-z-50"}`}>
-            <div className={`max-xl:container max-xl:mx-auto xl:absolute xl:w-full h-full py-2 px-2 lg:py-4 lg:px-4 `}>
-                <div onClick={(e) => e.stopPropagation()} className={`bg-neutral-50 dark:bg-neutral-950  rounded-md transition-all duration-300 overflow-hidden flex flex-col  justify-between   xl:z-40 h-full ${isBarOpen ? "w-2/3 p-6 pb-2 lg:pb-4 md:w-1/2 lg:w-1/3  xl:w-full " : "w-0 "}`}>
+        <div style={{left: left[0], width: left[1]}} onClick={() => isBarOpen && window.innerWidth <= 1280 && setIsBarOpen(false)} className={`fixed  top-14 sm:top-16 xl:top-[88px] bottom-0 xl:bottom-4   overflow-hidden max-xl:!w-full  transition-all duration-300 ${isBarOpen ? "  bg-black/[0.35] xl:z-[999] xl:backdrop-blur-none xl:bg-transparent   " : " xl:!w-0"} ${isZUp ? "z-[99] " : "-z-[999]"}`}>
+            <div className={`max-xl:container max-xl:mx-auto xl:w-full h-full py-2 px-2 lg:py-4 lg:px-4 xl:px-0 xl:py-0`}>
+                <div onClick={(e) => e.stopPropagation()} className={`bg-neutral-50 dark:bg-neutral-950  rounded-md transition-all duration-300 overflow-hidden flex flex-col  justify-between   xl:z-[999] h-full ${isBarOpen ? "w-2/3 p-6 pb-2 lg:pb-4 md:w-1/2 lg:w-1/3  xl:w-full " : "w-0 "}`}>
                     <div className="flex flex-col w-full">
                         <Link href="/" className={`text-lg lg:text-2xl md:text-xl border-b-slate-500/[0.25] border-b flex w-full gap-3 md:gap-4 items-center p-4 pr-2 pt-1 sm:pb-5 transition-all  ${isBarOpen ? "" : "opacity-0"}`}>
                             <TiHome className="" /> 

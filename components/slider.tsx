@@ -54,12 +54,12 @@ export default function Slider() {
                     <div style={{ transform: `translateX(calc(-100% * ${sliderIndex}))` }} key={special.id} className={`shrink-0 w-full aspect-[7/6] sm:aspect-[7/5] md:aspect-video transtion-all duration-500 flex items-end justify-between gap-1 px-4 py-5 sm:py-7 md:px-6 md:py-9 relative lg:px-8`}>
                         <Image src={special.img} style={{ zIndex: -10 }} className="object-center object-cover" fill alt={special.name} />
                         <div className=" ">
-                            <h2><span className="text-black dark:text-white text-lg  sm:text-xl md:text-2xl lg:text-3xl font-semibold">${Math.round(special.price - special.price * special.discount / 100)}</span>&nbsp; <span className="line-through text-xs sm:text-sm md:text-md lg:text-lg text-black/[0.5] dark:text-white/[0.5] transition-all">${special.price}</span><span className="text-xs font-semibold sm:text-sm md:text-md lg:text-lg"> - %{special.discount}</span></h2>
-                            <p className=" text-black/[0.5] dark:text-white/[0.5] transition-all w-[30ch] sm:w-auto truncate sm:whitespace-normal sm:overflow-visible sm:text-clip lg:text-lg text-xs sm:text-sm md:text-md">{special.description}</p>
+                            <h2><span className="text-black dark:text-white text-lg  sm:text-xl md:text-2xl lg:text-3xl font-semibold">${Math.round(special.price - special.price * special.discount / 100)}</span>&nbsp; <span className="line-through text-xs sm:text-sm md:text-base lg:text-lg text-black/[0.5] dark:text-white/[0.5] transition-all">${special.price}</span><span className="text-xs font-semibold sm:text-sm md:text-base lg:text-lg"> - %{special.discount}</span></h2>
+                            <p className=" text-black/[0.5] dark:text-white/[0.5] transition-all w-[30ch] sm:w-auto truncate sm:whitespace-normal sm:overflow-visible sm:text-clip lg:text-lg text-xs sm:text-sm md:text-base">{special.description}</p>
                             <h2 className="text-black dark:text-white sm:text-xl text-lg md:text-2xl lg:text-3xl font-semibold">{special.name}</h2>
                         </div>
                         <div className=" ">
-                            <button className="font-bold border-black shrink-0 border hover:bg-white hover:border-white dark:text-white dark:border-white hover:dark:bg-black transition-all hover:dark:border-black  text-black p-2 px-4 rounded-md lg:text-lg text-xs sm:text-sm md:text-md">View <span className="hidden sm:inline">Product</span></button>
+                            <button className="font-semibold border-black rounded-md dark:border-white border px-4 lg:px-5 hover:bg-black/[0.25]  dark:hover:bg-white/[0.25]   transition-all shrink-0 p-2  lg:text-lg text-xs sm:text-sm md:text-base">View <span className="hidden sm:inline">Product</span></button>
                         </div>
                         
                     </div>
